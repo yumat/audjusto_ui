@@ -7,3 +7,10 @@ npm -v
 9.5.1
 npm install
 ```
+# 起動
+```
+npm run dev
+```
+
+
+# 参考

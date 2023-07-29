@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home';
 import New from './pages/New';
 import Group from './pages/Group';
+import NotFound from './pages/NotFound';
 
 const App: React.FC = () => {
   return(
@@ -11,6 +12,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
         <Route path="/group/:id" element={<Group />} />
+        <Route path="/not_found" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

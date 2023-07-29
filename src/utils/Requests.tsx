@@ -1,6 +1,6 @@
 const requests = {
-    fetchGroupData:  'http://localhost:8003/api/group',  // GETメソッド
-    InsertGroupData: 'http://localhost:8003/api/group',  // POSTメソッド
+    fetchGroupData:  import.meta.env.VITE_API_URL + '/group',  // GETメソッド
+    InsertGroupData: import.meta.env.VITE_API_URL + '/group',  // POSTメソッド
   };
   
   export default requests;

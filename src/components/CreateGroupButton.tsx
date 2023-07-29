@@ -9,7 +9,7 @@ interface FormInput {
 }
 
 
-export default function CreateGroupButton(prop: any) {
+export default function CreateGroupButton() {
     const { register, handleSubmit, formState: { errors } } = useForm<FormInput>()
     const onSubmit: SubmitHandler<FormInput> = (data) => {
         postApi(data)

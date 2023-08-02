@@ -3,19 +3,21 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 
+import Get from '../components/ApiGet'
+import requests from '../utils/Requests';
 import ButtonAppBar from "../components/ButtonAppBar";
-import CreateGroupButton from "../components/CreateGroupButton";
+import CreateGroupForm from "../components/CreateGroupForm";
 
 
 const New: React.FC = () => {
+  Get(requests.healthCheck)
   return (
     <>
       <ButtonAppBar />
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 2 }}>
         <Toolbar />
         {/* <Typography> */}
-
-          <CreateGroupButton />         
+          <CreateGroupForm />       
 
         {/* </Typography> */}
       </Box>

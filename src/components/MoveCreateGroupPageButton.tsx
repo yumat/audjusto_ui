@@ -9,7 +9,7 @@ export default function MoveCreateGroupPageButton() {
             variant="contained"
             color="primary"
             component={Link}
-            to="/new"
+            to="/new_group"
           >
             はじめる
       </Button>

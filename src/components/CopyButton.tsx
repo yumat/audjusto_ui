@@ -22,7 +22,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ textToCopy }) => {
     onClick={handleCopyClick}
     style={{ width: '120px' }} 
     >
-      {copied ? 'コピー完了' : 'コピー'}
+      {copied ? 'コピー完了' : 'URLコピー'}
     </Button>
   );
 };

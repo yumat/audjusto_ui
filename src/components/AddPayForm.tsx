@@ -1,3 +1,4 @@
+// import { useForm } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { useParams } from "react-router-dom";
 import { FormControl, FormControlLabel, FormGroup, InputLabel, Select, MenuItem, Checkbox, TextField, Button } from '@mui/material';
@@ -18,7 +19,7 @@ type FormInput = {
 export default function AddPayForm(prop: any) {
     const { id } = useParams();
     const { register, handleSubmit, getValues, setValue } = useForm<FormInput>();
-
+    
     const onSubmit = (data: FormInput) => {
         const payload = {
             payer: data.payer,
@@ -48,7 +49,6 @@ export default function AddPayForm(prop: any) {
             </FormControl>
 
             <h4>誰に</h4>
-
             <FormControl fullWidth>
                 <FormGroup
                     style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}
@@ -56,23 +56,18 @@ export default function AddPayForm(prop: any) {
                     {prop.membersData.map((member: any, index: number) => (
                         <FormControlLabel
                             key={member.name}
-                            label={member.name}
+                            label={member.name}                            
                             control={
                                 <Checkbox
                                     value={member.name}
-                                    checked={true}
+                                    defaultChecked={member.name}
                                     {...register(`members.${index}.name` as const)}
                                 />
                             }
-                            style={{ marginRight: 16 }} // Add some spacing between checkboxes
                         />
                     ))}
                 </FormGroup>
             </FormControl>
-
-
-
-
             <TextField label="何に" {...register('event')} fullWidth />
             <TextField label="いくら払った" type="number" {...register('amount')} fullWidth />
 

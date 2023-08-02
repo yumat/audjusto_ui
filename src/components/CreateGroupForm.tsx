@@ -3,6 +3,9 @@ import { TextField, Button, Grid } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
+import Chip from '@mui/material/Chip';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 import Post from './ApiPostLink'
 import requests from '../utils/Requests';
@@ -13,7 +16,6 @@ type FormValues = {
         name: string;
     }[];
 };
-
 
 export default function CreateGroupForm() {
     const {
@@ -40,7 +42,7 @@ export default function CreateGroupForm() {
     };
 
     return (
-        <Grid container alignItems='center' justifyContent='center' direction="column">
+        <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <TextField
                     id="outlined-string"
@@ -49,7 +51,7 @@ export default function CreateGroupForm() {
                     InputLabelProps={{
                         shrink: true,
                     }}
-                    sx={{ width: 300, padding: 1, margin: 2 }}
+                    sx={{ width: '90%', padding: 1, margin: 2 }}
                     {...register('group_name', {
                         required: '1文字以上にしてください。',
                     })}
@@ -67,7 +69,7 @@ export default function CreateGroupForm() {
                                     InputLabelProps={{
                                         shrink: true,
                                     }}
-                                    sx={{ width: 300, padding: 1, margin: 2 }}
+                                    sx={{ width: '90%', padding: 1, margin: 2 }}
                                     {...register(`members.${index}.name` as const, {
                                         required: '1文字以上にしてください。',
                                     })}
@@ -86,26 +88,20 @@ export default function CreateGroupForm() {
                     );
                 })}
 
-                <Button
-                    sx={{ width: 300, padding: 2, margin: 2 }}
-                    variant="contained"
-                    color="primary"
-                    onClick={() =>
-                        append({
-                            name: "",
-                        })
-                    }
-                >
-                    追加
-                </Button>
-                <Button
-                    sx={{ width: 300, padding: 2, margin: 2 }}
-                    variant="contained"
-                    color="primary"
-                    onClick={handleSubmit(onSubmit)}
-                >
-                    作成
-                </Button>
+                <Grid container justifyContent="center" alignItems="center" style={{ flexWrap: 'wrap' }}>
+                    <Chip
+                        icon={<PersonAddAlt1Icon />}
+                        sx={{ minWidth: '30%', padding: 1, margin: 3 }}
+                        label="追加"
+                        onClick={() => append({ name: "" })}
+                    />
+                    <Chip
+                        icon={<GroupsIcon />}
+                        sx={{ minWidth: '30%', padding: 1, margin: 1 }}
+                        label="作成"
+                        onClick={handleSubmit(onSubmit)}
+                    />
+                </Grid>
             </form>
         </Grid>
     );

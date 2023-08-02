@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 import { Grid } from '@mui/material'
+import Toolbar from '@mui/material/Toolbar';
+// import Box from '@mui/material/Box';
 
 import ButtonAppBar from "../components/ButtonAppBar";
 import CopyButton from '../components/CopyButton';
@@ -37,19 +39,25 @@ const Group: React.FC = () => {
   return (
     <>
       <ButtonAppBar />
+      {/* <Box component="main" sx={{ p: 3 }}> */}
+      <Toolbar />
 
-      <Grid container alignItems='center' justifyContent='center' direction="column">
+      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
         <h2>{data.group_name}</h2>
+      </Grid>
+      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
         <CopyButton textToCopy={currentURL} />
         <OpenReimbursementDialogButton membersData={membersData} />
-        <OpenDetailDialogButton membersData={membersData} />
-        <h2>清算方法</h2>
-        <PaybackTable id={id} />
-        <h2>支払い履歴</h2>
-        <HistoryTable id={id} />
       </Grid>
-
-
+      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
+        <h2>清算方法</h2><OpenDetailDialogButton membersData={membersData} />
+      </Grid>
+      <PaybackTable id={id} />
+      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
+        <h2>支払い履歴</h2> <OpenReimbursementDialogButton membersData={membersData} />
+      </Grid>
+      <HistoryTable id={id} />
+      {/* </Box> */}
     </>
   )
 }

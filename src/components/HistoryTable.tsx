@@ -11,14 +11,13 @@ import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
 
 
-
 export default function HistoryTable(prop: any) {
     const { data, isLoading, isError } = useSwr(requests.fetchPaysData + "/" + prop.id)
     if(isLoading) return <div>Loading</div>
     if(isError) return <div>Error</div>
     return (
       <Paper >      
-        <TableContainer component={Paper}>
+        <TableContainer sx={{ width: '100%', margin: 2 }} component={Paper}>
         <Table sx={{ minWidth: 100 }} size="small" aria-label="simple table">
           <TableHead>
             <TableRow>

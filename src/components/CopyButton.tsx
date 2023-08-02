@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import clipboardCopy from 'clipboard-copy';
 import { Button } from '@mui/material';
+import Chip from '@mui/material/Chip';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 interface CopyButtonProps {
   textToCopy: string;
@@ -17,13 +19,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ textToCopy }) => {
   };
 
   return (
-    <Button
-    variant="contained"
-    onClick={handleCopyClick}
-    style={{ width: '120px' }} 
-    >
-      {copied ? 'コピー完了' : 'URLコピー'}
-    </Button>
+    <Chip icon={<ContentCopyIcon />} sx={{ minWidth: '30%' }} label="URLコピー" onClick={handleCopyClick} />
   );
 };
 

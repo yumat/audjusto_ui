@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -18,7 +17,7 @@ export default function HistoryTable(prop: any) {
     if(isError) return <div>Error</div>
     return (
       <Paper >      
-        <TableContainer component={Paper}>
+        <TableContainer sx={{ width: '100%', margin: 2 }} component={Paper}>
         <Table sx={{ minWidth: 100 }} size="small" aria-label="simple table">
           <TableHead>
             <TableRow>

@@ -42,7 +42,7 @@ export default function FullScreenDialog(prop: any) {
 
   return (
     <div>
-      <Chip icon={<ListIcon />} label="明細詳細" onClick={handleClickOpen} />
+      <Chip icon={<ListIcon />} sx={{ minWidth: '30%', margin: 1 }} label="明細詳細" onClick={handleClickOpen} />
       <Dialog
         fullScreen
         open={open}
@@ -64,7 +64,7 @@ export default function FullScreenDialog(prop: any) {
             </Typography>
           </Toolbar>
         </AppBar>
-        <h3>記録</h3>
+        <h3>立て替え記録</h3>
         <Paper >
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 100 }} size="small" aria-label="simple table">

@@ -36,7 +36,7 @@ export default function FullScreenDialog(prop: any) {
 
   return (
     <div>
-      <Chip icon={<PlaylistAddIcon />} label="立て替え記録の追加" onClick={handleClickOpen} />
+      <Chip icon={<PlaylistAddIcon />} sx={{ minWidth: '30%', margin: 1 }} label="立て替え記録の追加" onClick={handleClickOpen} />
       <Dialog
         fullScreen
         open={open}

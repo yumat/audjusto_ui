@@ -1,4 +1,3 @@
-// import { useForm } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { useParams } from "react-router-dom";
 import { FormControl, FormControlLabel, FormGroup, InputLabel, Select, MenuItem, Checkbox, TextField, Button } from '@mui/material';
@@ -9,8 +8,10 @@ import requests from '../utils/Requests';
 
 type FormInput = {
     payer: string;
+    payer_id:string;
     members: {
         name: string;
+        member_id:string;
     }[];
     event: string;
     amount: number;
@@ -21,13 +22,23 @@ export default function AddPayForm(prop: any) {
     const { register, handleSubmit, getValues, setValue } = useForm<FormInput>();
     
     const onSubmit = (data: FormInput) => {
+        const selectedPayer = prop.membersData.find((member: any) => member.name === data.payer);
+        
+        if (!selectedPayer) {
+            return; // Handle error condition
+        }
         const payload = {
-            payer: data.payer,
+            payer: selectedPayer.name,
+            payer_id: selectedPayer.member_id,
             event: data.event,
             amount: data.amount,
             members: prop.membersData
                 .filter((member: any, index: number) => getValues(`members.${index}.name`))
-                .map((member: any) => ({ name: member.name }))
+                .map((member: any, index: number) => ({
+                    name: member.name,
+                    member_id: member.member_id,
+                    // selected: getValues(`members.${index}.name`) === true
+                }))
         };
         postApi(payload)
     }
@@ -41,7 +52,7 @@ export default function AddPayForm(prop: any) {
                 <InputLabel>支払った人(誰が)</InputLabel>
                 <Select {...register('payer')}>
                     {prop.membersData.map((member: any) => (
-                        <MenuItem key={member.name} value={member.name}>
+                        <MenuItem key={member.member_id} value={member.name}>
                             {member.name}
                         </MenuItem>
                     ))}
@@ -70,7 +81,6 @@ export default function AddPayForm(prop: any) {
             </FormControl>
             <TextField label="何に" {...register('event')} fullWidth />
             <TextField label="いくら払った" type="number" {...register('amount')} fullWidth />
-
             <Button type="submit">追加</Button>
         </form>
     );

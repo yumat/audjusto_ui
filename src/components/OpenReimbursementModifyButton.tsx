@@ -7,11 +7,11 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
-import Chip from '@mui/material/Chip';
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import EditIcon from '@mui/icons-material/Edit';
 import { TransitionProps } from '@mui/material/transitions';
 
-import AddPayForm from "./AddPayForm";
+import DeletePayButton from "./DeletePayButton"
+import ModifyPayForm from "./ModifyPayForm";
 
 
 
@@ -36,8 +36,11 @@ export default function FullScreenDialog(prop: any) {
   };
 
   return (
+
     <div>
-      <Chip icon={<PlaylistAddIcon />} sx={{ minWidth: '30%', margin: 1 }} label="立て替え記録の追加" onClick={handleClickOpen} />
+      <IconButton onClick={handleClickOpen} edge="end">
+        <EditIcon />
+      </IconButton>
       <Dialog
         fullScreen
         open={open}
@@ -55,14 +58,17 @@ export default function FullScreenDialog(prop: any) {
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              立て替え記録の追加
+              立て替え記録の修正
             </Typography>
           </Toolbar>
         </AppBar>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
-        <h3></h3>
-        <AddPayForm membersData={prop.membersData}/>
-        <Button
+          <h3></h3>
+          {/* <ModifyPayForm membersData={prop.payData} /> */}
+          {/* deletebuton */}
+          {/* <h1>{prop.payData.date_time}</h1> */}
+          <DeletePayButton payDate={prop.payData.date_time}/>
+          <Button
             sx={{ width: '90%', marginTop: 1 }}
             variant="outlined"
             color="inherit"
@@ -70,7 +76,7 @@ export default function FullScreenDialog(prop: any) {
           >
             閉じる
           </Button>
-          </Grid>
+        </Grid>
       </Dialog>
     </div>
   );

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Button, Grid } from "@mui/material";
 import Dialog from '@mui/material/Dialog';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -64,33 +65,48 @@ export default function FullScreenDialog(prop: any) {
             </Typography>
           </Toolbar>
         </AppBar>
-        <h3>立て替え記録</h3>
-        <Paper >
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 100 }} size="small" aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell align="left">名前</TableCell>
-                  <TableCell align="right">立替<br/>金額</TableCell>
-                  <TableCell align="right">支出</TableCell>
-                  <TableCell align="right">貸し借り<br/>金額</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {prop.membersData.map((row: any, index:any) => (
-                  <TableRow key={index}>
-                    <TableCell align="left">{row.name}</TableCell>
-                    <TableCell align="right">¥{(Math.ceil(row.pay)).toLocaleString()}</TableCell>
-                    <TableCell align="right">¥{(Math.ceil(row.paid)).toLocaleString()}</TableCell>
-                    <TableCell align="right" style={{ color: (Math.ceil(row.pay) - Math.ceil(row.paid)) < 0 ? 'red' : 'inherit' }}>
-                    ¥{(Math.ceil(row.pay) - Math.ceil(row.paid)).toLocaleString()}
-                      </TableCell>
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
+          <h3>立て替え記録</h3>
+        </Grid>
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
+          <Paper >
+            <TableContainer component={Paper}>
+              <Table sx={{ minWidth: 100 }} size="small" aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">名前</TableCell>
+                    <TableCell align="right">立替<br />金額</TableCell>
+                    <TableCell align="right">支出</TableCell>
+                    <TableCell align="right">貸し借り<br />金額</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
+                </TableHead>
+                <TableBody>
+                  {prop.membersData.map((row: any, index: any) => (
+                    <TableRow key={index}>
+                      <TableCell align="left">{row.name}</TableCell>
+                      <TableCell align="right">¥{(Math.ceil(row.pay)).toLocaleString()}</TableCell>
+                      <TableCell align="right">¥{(Math.ceil(row.paid)).toLocaleString()}</TableCell>
+                      <TableCell align="right" style={{ color: (Math.ceil(row.pay) - Math.ceil(row.paid)) < 0 ? 'red' : 'inherit' }}>
+                        ¥{(Math.ceil(row.pay) - Math.ceil(row.paid)).toLocaleString()}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+
+          <Button
+            sx={{ width: '90%', marginTop: 1 }}
+            variant="outlined"
+            color="inherit"
+            onClick={handleClose}
+          >
+            閉じる
+          </Button>
+
+        </Grid>
+
       </Dialog>
     </div>
   );

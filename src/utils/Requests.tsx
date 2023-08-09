@@ -5,6 +5,7 @@ const requests = {
     fetchMembersData:  import.meta.env.VITE_API_URL + '/members',  // GET Membersメソッド
     fetchPaysData:  import.meta.env.VITE_API_URL + '/pays',  // GET Paysメソッド
     InsertPayHistory: import.meta.env.VITE_API_URL + '/pay',  // POST Payメソッド
+    DeletePayHistory: import.meta.env.VITE_API_URL + '/pay',  // Delete Payメソッド
     fetchPaybackData:  import.meta.env.VITE_API_URL + '/paybacks',  // GET Paybacksメソッド
   };
   

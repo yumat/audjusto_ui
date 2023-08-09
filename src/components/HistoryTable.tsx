@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 
 import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
+import OpenReimbursementModifyButton from '../components/OpenReimbursementModifyButton'
 
 
 export default function HistoryTable(prop: any) {
@@ -23,7 +24,8 @@ export default function HistoryTable(prop: any) {
             <TableRow>
               <TableCell align="left">誰が</TableCell>
               <TableCell align="right">何に</TableCell>
-              <TableCell align="right">いくら払った</TableCell>
+              <TableCell align="right">払った</TableCell>
+              <TableCell align="right"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -32,6 +34,7 @@ export default function HistoryTable(prop: any) {
                 <TableCell align="left">{row.payer}</TableCell>
                 <TableCell align="right">{row.event}</TableCell>
                 <TableCell align="right">¥{(Math.ceil(row.amount)).toLocaleString()}</TableCell>
+                <TableCell align="right"><OpenReimbursementModifyButton payData={row}/></TableCell>
               </TableRow>
             ))}
           </TableBody>

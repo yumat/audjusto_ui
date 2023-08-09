@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import { Button, Grid } from "@mui/material";
 import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 
@@ -14,12 +15,14 @@ const New: React.FC = () => {
   return (
     <>
       <ButtonAppBar />
-      <Box component="main" sx={{ p: 1, display: 'flex', justifyContent: 'center' }}>
-
-          <CreateGroupForm />       
-
+      <Box component="main" sx={{ p: 3 }}>
+        <Toolbar />
+        <h2>グループの作成</h2>
+        {/* <Grid container justifyContent="center" alignItems="center" style={{ flexWrap: 'wrap' }}> */}
+          <CreateGroupForm />
+        {/* </Grid> */}
       </Box>
-    </>     
+    </>
   )
 }
 

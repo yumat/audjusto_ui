@@ -47,7 +47,6 @@ export default function AddPayForm(prop: any) {
     };
 
     return (
-
         <form onSubmit={handleSubmit(onSubmit)}>
             <FormControl fullWidth>
                 <InputLabel>支払った人(誰が)</InputLabel>

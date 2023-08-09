@@ -42,7 +42,6 @@ export default function CreateGroupForm() {
     };
 
     return (
-        <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <TextField
                     id="outlined-string"
@@ -51,7 +50,7 @@ export default function CreateGroupForm() {
                     InputLabelProps={{
                         shrink: true,
                     }}
-                    sx={{ width: '100%', padding: 1, margin: 2 }}
+                    sx={{ width: '100%' }}
                     {...register('group_name', {
                         required: '1文字以上にしてください。',
                     })}
@@ -69,7 +68,7 @@ export default function CreateGroupForm() {
                                     InputLabelProps={{
                                         shrink: true,
                                     }}
-                                    sx={{ width: '100%', padding: 1, margin: 2 }}
+                                    sx={{ width: '100%', marginTop: 1 }}
                                     {...register(`members.${index}.name` as const, {
                                         required: '1文字以上にしてください。',
                                     })}
@@ -103,6 +102,5 @@ export default function CreateGroupForm() {
                     />
                 </Grid>
             </form>
-        </Grid>
     );
 }

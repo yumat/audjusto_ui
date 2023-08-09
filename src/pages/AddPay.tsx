@@ -38,7 +38,7 @@ const AddPay: React.FC = () => {
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <h2>立て替え記録の追加</h2>
-        <Grid container justifyContent="center" alignItems="center" style={{ flexWrap: 'wrap' }}>
+        {/* <Grid container justifyContent="center" alignItems="center" style={{ flexWrap: 'wrap' }}> */}
           <AddPayForm membersData={membersData} />
           <Button
             sx={{ width: '100%', marginTop: 1 }}
@@ -49,7 +49,7 @@ const AddPay: React.FC = () => {
           >
             戻る
           </Button>
-        </Grid>
+        {/* </Grid> */}
       </Box>
     </>
   )

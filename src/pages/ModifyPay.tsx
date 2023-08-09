@@ -20,6 +20,7 @@ const ModifyPay: React.FC = () => {
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
+      <Toolbar />
         <Grid container justifyContent="center" alignItems="center" style={{ flexWrap: 'wrap' }}>
           {/* <ModifyPayForm /> */}
           <DeletePayButton payDate={day} />

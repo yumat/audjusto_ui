@@ -40,6 +40,7 @@ const Detail: React.FC = () => {
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }} alignItems="flex-start">
+      <Toolbar />
       <h2>明細詳細</h2>
         <Grid container justifyContent="center" alignItems="flex-start">
           <Toolbar />

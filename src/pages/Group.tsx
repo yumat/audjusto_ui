@@ -53,11 +53,17 @@ const Group: React.FC = () => {
       <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
         <h2>清算方法</h2><MoveDetailGroupPageButton id={id} />
       </Grid>
-      <PaybackTable id={id} />
+      <Grid container justifyContent="center" alignItems="flex-start">
+        <PaybackTable id={id} />
+      </Grid>
+      
       <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
         <h2>支払い履歴</h2> <MoveAddPayPageButton id={id} />
       </Grid>
-      <HistoryTable id={id} />
+      <Grid container justifyContent="center" alignItems="flex-start">
+        <HistoryTable id={id} />
+      </Grid>
+      
       {/* </Box> */}
     </>
   )

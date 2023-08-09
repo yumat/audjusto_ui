@@ -11,14 +11,14 @@ import useSwr from '../components/ApiGetSWR'
 
 
 
-export default function HistoryTable(prop: any) {
+export default function PaybackTable(prop: any) {
     const { data, isLoading, isError } = useSwr(requests.fetchPaybackData + "/" + prop.id)
     if(isLoading) return <div>Loading</div>
     if(isError) return <div>Error</div>
     return (
-      <Paper >      
-        <TableContainer sx={{ minWidth: 350 }} component={Paper}>
-        <Table sx={{ minWidth: 100 }} size="small" aria-label="simple table">
+      <Paper sx={{ width: '100%' }}>
+      <TableContainer component={Paper}>
+        <Table sx={{ width: '100%' }} size="small" aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="left">誰が</TableCell>

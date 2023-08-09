@@ -51,7 +51,7 @@ export default function CreateGroupForm() {
                     InputLabelProps={{
                         shrink: true,
                     }}
-                    sx={{ width: '90%', padding: 1, margin: 2 }}
+                    sx={{ width: '100%', padding: 1, margin: 2 }}
                     {...register('group_name', {
                         required: '1文字以上にしてください。',
                     })}
@@ -69,7 +69,7 @@ export default function CreateGroupForm() {
                                     InputLabelProps={{
                                         shrink: true,
                                     }}
-                                    sx={{ width: '90%', padding: 1, margin: 2 }}
+                                    sx={{ width: '100%', padding: 1, margin: 2 }}
                                     {...register(`members.${index}.name` as const, {
                                         required: '1文字以上にしてください。',
                                     })}

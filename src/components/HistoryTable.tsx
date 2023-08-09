@@ -10,6 +10,8 @@ import Paper from '@mui/material/Paper';
 import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
 import OpenReimbursementModifyButton from '../components/OpenReimbursementModifyButton'
+import MoveModifyPayPageButton from '../components/MoveModifyPayPageButton'
+import DeletePayButton from '../components/DeletePayButton'
 
 
 export default function HistoryTable(prop: any) {
@@ -18,7 +20,7 @@ export default function HistoryTable(prop: any) {
     if(isError) return <div>Error</div>
     return (
       <Paper >      
-        <TableContainer sx={{ width: '100%', margin: 2 }} component={Paper}>
+        <TableContainer sx={{ minWidth: 350 }} component={Paper}>
         <Table sx={{ minWidth: 100 }} size="small" aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -34,7 +36,9 @@ export default function HistoryTable(prop: any) {
                 <TableCell align="left">{row.payer}</TableCell>
                 <TableCell align="right">{row.event}</TableCell>
                 <TableCell align="right">¥{(Math.ceil(row.amount)).toLocaleString()}</TableCell>
-                <TableCell align="right"><OpenReimbursementModifyButton payData={row}/></TableCell>
+                <TableCell align="right"><DeletePayButton payDate={row.date_time}/></TableCell>
+                {/* <TableCell align="right"><MoveModifyPayPageButton payData={row.date_time}/></TableCell> */}
+                {/* <TableCell align="right"><OpenReimbursementModifyButton payData={row}/></TableCell> */}
               </TableRow>
             ))}
           </TableBody>

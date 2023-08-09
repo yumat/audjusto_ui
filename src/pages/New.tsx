@@ -14,12 +14,10 @@ const New: React.FC = () => {
   return (
     <>
       <ButtonAppBar />
-      <Box component="main" sx={{ p: 2 }}>
-        <Toolbar />
-        {/* <Typography> */}
+      <Box component="main" sx={{ p: 1, display: 'flex', justifyContent: 'center' }}>
+
           <CreateGroupForm />       
 
-        {/* </Typography> */}
       </Box>
     </>     
   )

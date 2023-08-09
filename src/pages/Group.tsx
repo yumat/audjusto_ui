@@ -10,6 +10,8 @@ import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
 import OpenReimbursementDialogButton from '../components/OpenReimbursementDialogButton'
 import OpenDetailDialogButton from '../components/OpenDetailDialogButton'
+import MoveAddPayPageButton from '../components/MoveAddPayPageButton'
+import MoveDetailGroupPageButton from '../components/MoveDetailGroupPageButton'
 import HistoryTable from '../components/HistoryTable'
 import PaybackTable from '../components/PaybackTable'
 
@@ -18,9 +20,8 @@ const Group: React.FC = () => {
   const { id } = useParams();
   const currentURL = window.location.href;
   const { data, isLoading, isError } = useSwr(requests.fetchGroupData + "/" + id)
-  const { data: membersData, isLoading: isMembersDataLoading, isError: isMembersDataError } = useSwr(requests.fetchMembersData + "/" + id)
 
-  if (isLoading || isMembersDataLoading)
+  if (isLoading)
     return (
       <>
         <ButtonAppBar />
@@ -29,7 +30,7 @@ const Group: React.FC = () => {
     )
   if (isError == 404)
     window.location.href = '/not_found'
-  if (isError || isMembersDataError)
+  if (isError)
     return (
       <>
         <ButtonAppBar />
@@ -42,19 +43,19 @@ const Group: React.FC = () => {
       {/* <Box component="main" sx={{ p: 3 }}> */}
       <Toolbar />
 
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
+      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
         <h2>{data.group_name}</h2>
       </Grid>
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
+      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
         <CopyButton textToCopy={currentURL} />
-        <OpenReimbursementDialogButton membersData={membersData} />
+        <MoveAddPayPageButton id={id} />
       </Grid>
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
-        <h2>清算方法</h2><OpenDetailDialogButton membersData={membersData} />
+      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
+        <h2>清算方法</h2><MoveDetailGroupPageButton id={id} />
       </Grid>
       <PaybackTable id={id} />
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '20px' }}>
-        <h2>支払い履歴</h2> <OpenReimbursementDialogButton membersData={membersData} />
+      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
+        <h2>支払い履歴</h2> <MoveAddPayPageButton id={id} />
       </Grid>
       <HistoryTable id={id} />
       {/* </Box> */}

@@ -51,7 +51,7 @@ export default function AddPayForm(prop: any) {
         <form onSubmit={handleSubmit(onSubmit)}>
             <FormControl fullWidth>
                 <InputLabel>支払った人(誰が)</InputLabel>
-                <Select {...register('payer')} sx={{ width: '90%' }}>
+                <Select {...register('payer')} sx={{ width: '100%' }}>
                     {prop.membersData.map((member: any) => (
                         <MenuItem key={member.member_id} value={member.name}>
                             {member.name}
@@ -80,10 +80,10 @@ export default function AddPayForm(prop: any) {
                     ))}
                 </FormGroup>
             </FormControl>
-            <TextField label="何に" {...register('event')} sx={{ width: '90%', marginTop: 1 }} />
-            <TextField label="いくら払った" type="number" {...register('amount')} sx={{ width: '90%', marginTop: 1 }} />
+            <TextField label="何に" {...register('event')} sx={{ width: '100%', marginTop: 1 }} />
+            <TextField label="いくら払った" type="number" {...register('amount')} sx={{ width: '100%', marginTop: 1 }} />
             <Button
-                sx={{ width: '90%', marginTop: 1 }}
+                sx={{ width: '100%', marginTop: 1 }}
                 variant="outlined"
                 type="submit"
             >

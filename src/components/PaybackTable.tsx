@@ -17,7 +17,7 @@ export default function HistoryTable(prop: any) {
     if(isError) return <div>Error</div>
     return (
       <Paper >      
-        <TableContainer sx={{ width: '100%', margin: 2 }} component={Paper}>
+        <TableContainer sx={{ minWidth: 350 }} component={Paper}>
         <Table sx={{ minWidth: 100 }} size="small" aria-label="simple table">
           <TableHead>
             <TableRow>

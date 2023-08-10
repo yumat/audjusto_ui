@@ -18,6 +18,12 @@ import useSwr from '../components/ApiGetSWR'
 
 
 const Detail: React.FC = () => {
+  let style = {
+    // backgroundColor: "gray",
+    // color: "#FFF",
+    margin: 0,
+    padding: 3,
+  };
   const { id } = useParams();
   const groupUrl = "/group/" + id
 
@@ -41,9 +47,8 @@ const Detail: React.FC = () => {
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }} alignItems="flex-start">
       <Toolbar />
-      <h2>明細詳細</h2>
+      <h2 style={style}>明細詳細</h2>
         <Grid container justifyContent="center" alignItems="flex-start">
-          <Toolbar />
           <Paper sx={{ width: '100%' }}>
             <TableContainer component={Paper}>
               <Table sx={{ width: '100%' }} size="small" aria-label="simple table">

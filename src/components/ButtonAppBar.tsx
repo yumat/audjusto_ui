@@ -1,5 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
+import { Grid } from '@mui/material'
+import { Link } from "react-router-dom";
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
@@ -16,6 +18,12 @@ interface Props {
 const drawerWidth = 240;
 
 export default function DrawerAppBar(props: Props) {
+  let style = {
+    // backgroundColor: "gray",
+    // color: "#FFF",
+    margin: 0,
+    padding: 3,
+  };
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -26,9 +34,9 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-        {/* <h4>ここに記載</h4>
-        <h5>FAQ</h5>
+        Audjusto<br />(オージャスト)
+        
+        {/* <h5>FAQ</h5>
         <h5>要望・問い合わせ</h5>
         <h5>広告について</h5>
         <h5>利用規約</h5>
@@ -37,7 +45,8 @@ export default function DrawerAppBar(props: Props) {
         <h5>コピーライト</h5> */}
       </Typography>
       <Divider />
-      {/* <h4>2023 sample</h4> */}
+      <Link to="/how_to_use" style={{color: "black"}}>使い方</Link>
+      {/* <h6>2023 Audjusto</h6> */}
 
     </Box>
   );
@@ -58,14 +67,17 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          ここにアプリ名を記載
-          <Typography
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            {/* Audjusto */}
+            <Link to="/" style={{color: "white"}}>Audjusto</Link>
+          </Typography>
+          {/* <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
-          </Typography>
+            AA
+          </Typography> */}
         </Toolbar>
       </AppBar>
       <Box component="nav">

@@ -11,13 +11,19 @@ import CreateGroupForm from "../components/CreateGroupForm";
 
 
 const New: React.FC = () => {
+  let style = {
+    // backgroundColor: "gray",
+    // color: "#FFF",
+    margin: 0,
+    padding: 3,
+  };
   Get(requests.healthCheck)
   return (
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <h2>グループの作成</h2>
+        <h2 style={style}>グループの作成</h2>
         {/* <Grid container justifyContent="center" alignItems="center" style={{ flexWrap: 'wrap' }}> */}
           <CreateGroupForm />
         {/* </Grid> */}

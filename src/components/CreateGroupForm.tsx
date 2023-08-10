@@ -53,6 +53,10 @@ export default function CreateGroupForm() {
                     sx={{ width: '100%' }}
                     {...register('group_name', {
                         required: '1文字以上にしてください。',
+                        maxLength: {
+                            value: 16,
+                            message: '16文字以内で入力してください',
+                        },
                     })}
 
                 />
@@ -71,6 +75,10 @@ export default function CreateGroupForm() {
                                     sx={{ width: '100%', marginTop: 1 }}
                                     {...register(`members.${index}.name` as const, {
                                         required: '1文字以上にしてください。',
+                                        maxLength: {
+                                            value: 16,
+                                            message: '16文字以内で入力してください',
+                                        },
                                     })}
                                     InputProps={{
                                         endAdornment: index > 1 ? (
@@ -83,6 +91,7 @@ export default function CreateGroupForm() {
                                     }}
                                 />
                             </section>
+                            
                         </div>
                     );
                 })}

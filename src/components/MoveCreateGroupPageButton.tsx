@@ -5,7 +5,7 @@ export default function MoveCreateGroupPageButton() {
   return (
     <Grid container alignItems='center' justifyContent='center' direction="column">
       <Button
-            sx={{ width: 300, padding: 2, margin: 2 }}
+            sx={{ width: 300, padding: 2, margin: 0 }}
             variant="contained"
             color="primary"
             component={Link}

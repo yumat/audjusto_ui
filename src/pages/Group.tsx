@@ -17,6 +17,12 @@ import PaybackTable from '../components/PaybackTable'
 
 
 const Group: React.FC = () => {
+  let style = {
+    // backgroundColor: "gray",
+    // color: "#FFF",
+    margin: 0,
+    padding: 3,
+  };
   const { id } = useParams();
   const currentURL = window.location.href;
   const { data, isLoading, isError } = useSwr(requests.fetchGroupData + "/" + id)
@@ -44,7 +50,7 @@ const Group: React.FC = () => {
       <Toolbar />
 
       <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-        <h2>{data.group_name}</h2>
+        <h2 style={style}>{data.group_name}</h2>
       </Grid>
       <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
         <CopyButton textToCopy={currentURL} />

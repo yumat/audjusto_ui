@@ -6,6 +6,7 @@ import Group from './pages/Group';
 import AddPay from './pages/AddPay';
 // import ModifyPay from './pages/ModifyPay';
 import Detail from './pages/Detail';
+import HowToUse from "./pages/HowToUse"
 import NotFound from './pages/NotFound';
 
 const App: React.FC = () => {
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/add_pay/:id" element={<AddPay />} />
         {/* <Route path="/modify_pay/:id/:day" element={<ModifyPay />} /> */}
         <Route path="/group_detail/:id" element={<Detail />} />
+        <Route path="/how_to_use" element={<HowToUse />} />
         <Route path="/not_found" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -6,17 +6,16 @@ import Toolbar from '@mui/material/Toolbar';
 import ButtonAppBar from "../components/ButtonAppBar";
 
 
-const New: React.FC = () => {
+const NotFound: React.FC = () => {
   return (
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <h2>404 お探しのページはありませんでした。</h2>
-
       </Box>
     </>     
   )
 }
 
-export default New;
+export default NotFound;

@@ -7,7 +7,7 @@ import Chip from '@mui/material/Chip';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import GroupsIcon from '@mui/icons-material/Groups';
 
-import Post from './ApiPostLink'
+import Post from './ApiPostNewId'
 import requests from '../utils/Requests';
 
 type FormValues = {
@@ -38,7 +38,7 @@ export default function CreateGroupForm() {
         postApi(data)
     }
     const postApi = (group_name: any) => {
-        return Post(requests.InsertGroupData, group_name)
+        return Post(requests.InsertGroupData, group_name, "/group/")
     };
 
     return (

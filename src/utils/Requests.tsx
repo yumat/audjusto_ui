@@ -8,6 +8,7 @@ const requests = {
     InsertPayHistory: import.meta.env.VITE_API_URL + '/pay',  // POST Payメソッド
     DeletePayHistory: import.meta.env.VITE_API_URL + '/pay',  // Delete Payメソッド
     fetchPaybackData:  import.meta.env.VITE_API_URL + '/paybacks',  // GET Paybacksメソッド
+    InsertScheduleData: import.meta.env.VITE_API_URL + '/schedule',  // POST Eventメソッド
   };
   
   export default requests;

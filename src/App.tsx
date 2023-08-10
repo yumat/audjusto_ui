@@ -6,7 +6,7 @@ import Group from './pages/Group';
 import AddPay from './pages/AddPay';
 // import ModifyPay from './pages/ModifyPay';
 import Detail from './pages/Detail';
-// import NewSchedule from './pages/NewSchedule';
+import NewSchedule from './pages/NewSchedule';
 import HowToUse from "./pages/HowToUse"
 import NotFound from './pages/NotFound';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid } from '@mui/material'
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 
@@ -8,7 +9,7 @@ import ButtonAppBar from "../components/ButtonAppBar";
 import CreateScheduleForm from "../components/CreateScheduleForm";
 
 
-const NewSchedule: React.FC = () => {
+const NewEvent: React.FC = () => {
   let style = {
     // backgroundColor: "gray",
     // color: "#FFF",
@@ -20,14 +21,14 @@ const NewSchedule: React.FC = () => {
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        <h2 style={style}>スケジュール調整の作成</h2>
-        <CreateScheduleForm />
-
-
+        <Toolbar />        
+        <Grid container justifyContent="center" alignItems="center" direction="column">
+          <h2 style={style}>スケジュール調整の作成</h2>
+          <CreateScheduleForm />
+        </Grid>
       </Box>
     </>
   )
 }
 
-export default NewSchedule;
+export default NewEvent;

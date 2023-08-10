@@ -1,10 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Chip } from '@mui/material';
 import Calendar from 'react-calendar'; 
 import 'react-calendar/dist/Calendar.css'
 
-const YourComponent: React.FC = () => {
+import Post from './ApiPostNewId'
+import requests from '../utils/Requests';
+
+const CreateScheduleForm: React.FC = () => {
     const { register, handleSubmit, setValue, getValues } = useForm();
 
     const [selectedDates, setSelectedDates] = React.useState<Date[]>([]);
@@ -12,45 +15,65 @@ const YourComponent: React.FC = () => {
     const onSubmit = () => {
         const payload = {
             group_name: getValues('group_name'),
-            schedule: selectedDates.map(date => ({ date: formatDate(date) }))
+            schedule: selectedDates.map(date => ({ date: formatDateForPayload(date) }))
         };
 
-        // Now you can send the payload to your API using POST method
-        // For example using fetch or Axios
-
-        console.log(payload); // Just for testing purposes
+        console.log(payload);
+        postApi(payload)
     };
 
-    const formatDate = (date: Date) => {
-        const year = date.getFullYear();
+    const postApi = (data: any) => {
+        return Post(requests.InsertScheduleData, data, "/schedule/")
+    };
+
+
+    const formatDateForDisplay = (date: Date) => {
         const month = date.getMonth() + 1; // Month is zero-based
         const day = date.getDate();
-        return `${year}${month.toString().padStart(2, '0')}${day.toString().padStart(2, '0')}`;
+        return `${month}/${day}`;
+    };
+
+    const formatDateForPayload = (date: Date) => {
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+        const day = date.getDate().toString().padStart(2, '0');
+        return `${year}${month}${day}`;
     };
 
     const handleDateChange = (date: Date) => {
         setSelectedDates(prevDates => [...prevDates, date]);
     };
 
+    const handleChipDelete = (chipIndex: number) => {
+        setSelectedDates(prevDates => prevDates.filter((_, index) => index !== chipIndex));
+    };
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <TextField
-                label="Group Name"
+                label="グループ名"
                 {...register('group_name', { required: true })}
                 fullWidth
                 margin="normal"
             />
 
-            {/* Display selected dates */}
+            {/* Display selected dates as chips */}
+            選択中の日付
             <div>
-                Selected Dates:
+                
                 {selectedDates.map((date, index) => (
-                    <span key={index}>{formatDate(date)}, </span>
+                    <Chip
+                        key={index}
+                        label={formatDateForDisplay(date)}
+                        onDelete={() => handleChipDelete(index)}
+                        sx={{ margin: '0.2rem' }}
+                        color='primary'
+                    />
                 ))}
             </div>
 
             {/* Render the calendar */}
-            <Calendar onChange={handleDateChange} value={null} />
+            <Calendar onClickDay={handleDateChange} value={null} />
 
             <Button type="submit" variant="contained" color="primary">
                 Submit
@@ -59,4 +82,4 @@ const YourComponent: React.FC = () => {
     );
 };
 
-export default YourComponent;
+export default CreateScheduleForm;

@@ -1,10 +1,13 @@
 import React from 'react';
+// import { useEffect } from "react";
+// import { useLocation } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Grid } from '@mui/material'
-import Paper from '@mui/material/Paper';
+// import Paper from '@mui/material/Paper';
 // import Typography from '@mui/material/Typography';
 
+import usePageTracking from "../components/usePageTracking"
 
 import ButtonAppBar from "../components/ButtonAppBar";
 import MoveCreateGroupPageButton from "../components/MoveCreateGroupPageButton";
@@ -17,6 +20,7 @@ const Home: React.FC = () => {
     margin: 0,
     padding: 3,
   };
+  usePageTracking();
   return (
     <>
       <ButtonAppBar />
@@ -50,8 +54,8 @@ const Home: React.FC = () => {
           </Grid>
           <Grid item>
             会員登録不要で利用できます。<br />
-            Audjustoのシンプルなインターフェースは<br />
-            手間のかかる操作は一切不要です。<br />
+            Audjustoのシンプルなインターフェースでは<br />
+            手間のかかる操作が一切不要です。<br />
           </Grid>
         </Grid>
         {/* <MoveCreateGroupPageButton /> */}

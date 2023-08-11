@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { TextField, Button, Chip } from '@mui/material';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
+import '../components/calendar-override.css'
 
 import Post from './ApiPostNewId'
 import requests from '../utils/Requests';
@@ -75,13 +76,16 @@ const CreateScheduleForm: React.FC = () => {
             </div>
 
             {/* Render the calendar */}
-            <Calendar onClickDay={handleDateChange} value={null} />
+            <Calendar
+                onClickDay={handleDateChange}
+                value={null}
+            />
 
             <Button
                 type="submit"
                 variant="contained"
                 color="primary"
-                sx={{ width: '100%', marginTop: 1 }}                
+                sx={{ width: '100%', marginTop: 1 }}
             >
                 日程調整グループの作成
             </Button>

@@ -9,7 +9,7 @@ import requests from '../utils/Requests';
 export default function DeletePayButton(prop: any) {
   const { id } = useParams();
   const DeleteApi = (body: any) => {
-    return Delete(requests.DeletePayHistory + '/' + id, body, id)
+    return Delete(requests.DeletePayHistory + '/' + id, body, id, "/group/")
   };
 
   return (

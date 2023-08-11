@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { TextField, Button, Chip } from '@mui/material';
-import Calendar from 'react-calendar'; 
+import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 
 import Post from './ApiPostNewId'
@@ -9,7 +9,6 @@ import requests from '../utils/Requests';
 
 const CreateScheduleForm: React.FC = () => {
     const { register, handleSubmit, setValue, getValues } = useForm();
-
     const [selectedDates, setSelectedDates] = React.useState<Date[]>([]);
 
     const onSubmit = () => {
@@ -40,8 +39,14 @@ const CreateScheduleForm: React.FC = () => {
         return `${year}${month}${day}`;
     };
 
+    // const handleDateChange = (date: Date) => {
+    //     setSelectedDates(prevDates => [...prevDates, date]);
+    // };
+
     const handleDateChange = (date: Date) => {
-        setSelectedDates(prevDates => [...prevDates, date]);
+        if (!selectedDates.some(selectedDate => selectedDate.getTime() === date.getTime())) {
+            setSelectedDates(prevDates => [...prevDates, date]);
+        }
     };
 
     const handleChipDelete = (chipIndex: number) => {
@@ -53,14 +58,14 @@ const CreateScheduleForm: React.FC = () => {
             <TextField
                 label="グループ名"
                 {...register('group_name', { required: true })}
-                fullWidth
+                sx={{ width: '100%' }}
                 margin="normal"
             />
 
             {/* Display selected dates as chips */}
             選択中の日付
             <div>
-                
+
                 {selectedDates.map((date, index) => (
                     <Chip
                         key={index}
@@ -75,8 +80,13 @@ const CreateScheduleForm: React.FC = () => {
             {/* Render the calendar */}
             <Calendar onClickDay={handleDateChange} value={null} />
 
-            <Button type="submit" variant="contained" color="primary">
-                Submit
+            <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                sx={{ width: '100%', marginTop: 1 }}                
+            >
+                日程調整グループの作成
             </Button>
         </form>
     );

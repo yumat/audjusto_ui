@@ -20,7 +20,7 @@ const NewEvent: React.FC = () => {
   return (
     <>
       <ButtonAppBar />
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 1 }}>
         <Toolbar />        
         <Grid container justifyContent="center" alignItems="center" direction="column">
           <h2 style={style}>スケジュール調整の作成</h2>

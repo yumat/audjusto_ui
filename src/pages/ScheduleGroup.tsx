@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-import { Grid } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import Toolbar from '@mui/material/Toolbar';
-import Box from '@mui/material/Box';
 
 import ButtonAppBar from "../components/ButtonAppBar";
 import CopyButton from '../components/CopyButton';
 import MoveAttendancePageButton from '../components/MoveAttendancePageButton';
+import MoveGroupPageButton from '../components/MoveGroupPageButton';
 import ScheduleTable from '../components/ScheduleTable';
 import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
@@ -56,9 +56,13 @@ const ScheduleGroup: React.FC = () => {
         <MoveAttendancePageButton id={id} />
       </Grid>
       <Grid container justifyContent="center" alignItems="flex-start">
-      <ScheduleTable id={id}/>
+        <h6 style={{ textAlign: 'right', width: '90%', margin: 0 }}>行をクリックすると出欠の詳細を確認できます。</h6>
+        <ScheduleTable id={id} />
       </Grid>
-      
+      <Grid container justifyContent="center" alignItems="flex-start">
+        <MoveGroupPageButton />
+      </Grid>
+
     </>
   )
 }

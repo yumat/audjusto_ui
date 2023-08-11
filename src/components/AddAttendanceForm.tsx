@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, IconButton } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
-import Icon from '@mui/material/Icon';
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
+import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 
 import useSwr from '../components/ApiGetSWR';
 import requests from '../utils/Requests';
@@ -18,13 +17,13 @@ const AddAttendantForm: React.FC = () => {
         const year = parseInt(dateString.slice(0, 4));
         const month = parseInt(dateString.slice(4, 6)) - 1; // 0-indexed months
         const day = parseInt(dateString.slice(6, 8));
-        
+
         const daysOfWeek = ["日", "月", "火", "水", "木", "金", "土"];
         const date = new Date(year, month, day);
         const dayOfWeek = daysOfWeek[date.getDay()]; // 0 (日曜) から 6 (土曜) までの数値
-        
+
         return `${month + 1}/${day} (${dayOfWeek})`;
-      }
+    }
 
     const [name, setName] = useState('');
     const [selectedDates, setSelectedDates] = useState<{ date: string; date_id: string; result: string }[]>([]);
@@ -95,7 +94,7 @@ const AddAttendantForm: React.FC = () => {
                                             color={selectedDates.some((selectedDate) => selectedDate.date === date.date && selectedDate.result === 'available') ? 'primary' : 'default'}
                                             onClick={() => handleDateSelection(date.date, date.date_id, 'available')}
                                         >
-                                            <CheckBoxIcon />
+                                            <SentimentVerySatisfiedIcon />
                                         </IconButton>
                                     </TableCell>
                                     <TableCell align="left">
@@ -103,7 +102,7 @@ const AddAttendantForm: React.FC = () => {
                                             color={selectedDates.some((selectedDate) => selectedDate.date === date.date && selectedDate.result === 'maybe') ? 'primary' : 'default'}
                                             onClick={() => handleDateSelection(date.date, date.date_id, 'maybe')}
                                         >
-                                            <IndeterminateCheckBoxIcon />
+                                            <SentimentDissatisfiedIcon />
                                         </IconButton>
                                     </TableCell>
                                     <TableCell align="left">
@@ -111,7 +110,7 @@ const AddAttendantForm: React.FC = () => {
                                             color={selectedDates.some((selectedDate) => selectedDate.date === date.date && selectedDate.result === 'unavailable') ? 'primary' : 'default'}
                                             onClick={() => handleDateSelection(date.date, date.date_id, 'unavailable')}
                                         >
-                                            <CheckBoxOutlineBlankIcon />
+                                            <SentimentVeryDissatisfiedIcon />
                                         </IconButton>
                                     </TableCell>
                                 </TableRow>

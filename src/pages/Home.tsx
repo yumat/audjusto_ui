@@ -1,16 +1,13 @@
 import React from 'react';
-// import { useEffect } from "react";
-// import { useLocation } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Grid } from '@mui/material'
-// import Paper from '@mui/material/Paper';
-// import Typography from '@mui/material/Typography';
 
 import usePageTracking from "../components/usePageTracking"
 
 import ButtonAppBar from "../components/ButtonAppBar";
 import MoveCreateGroupPageButton from "../components/MoveCreateGroupPageButton";
+import MoveCreateScheduleGroupPageButton from '../components/MoveCreateScheduleGroupPageButton';
 
 
 const Home: React.FC = () => {
@@ -18,7 +15,7 @@ const Home: React.FC = () => {
     // backgroundColor: "gray",
     // color: "#FFF",
     margin: 0,
-    padding: 3,
+    padding: 0,
   };
   usePageTracking();
   return (
@@ -26,45 +23,78 @@ const Home: React.FC = () => {
       <ButtonAppBar />
       <Box component="main" sx={{ p: 1 }}>
         <Toolbar />
-        {/* <Typography> */}
         <Grid container justifyContent="center" alignItems="center" direction="column">
           <Grid item>
-            <h3 style={style}>割り勘の計算結果と清算方法を自動提供</h3>
+            <h3 style={style}>日程調整と割り勘計算結果の共有</h3>
           </Grid>
           <Grid item>
             <img src="/images/title.png" width={350} />
           </Grid>
+          {/* <Grid item>
+            <img src="/images/all.png" width={400} />
+          </Grid> */}
           <Grid item>
-            {/* <img src="/images/transaction.png" width={350} /> */}
+            <MoveCreateScheduleGroupPageButton /><MoveCreateGroupPageButton />
           </Grid>
           <Grid item>
-            <MoveCreateGroupPageButton />
+            <h3 style={style}>Audjustoの2大機能</h3>
           </Grid>
           <Grid item>
-            <h3 style={style}>Audjustoの機能</h3>
+            <h6 style={style}>以下2機能を単体での利用はもちろん連携した利用も可能です。</h6>
           </Grid>
+        </Grid>
+      </Box>
+      <Box component="main" sx={{ p: 1, backgroundColor: 'lightgreen' }}>
+        <Grid container justifyContent="center" alignItems="center" direction="column">
+          <Grid item>
+            <h4 style={style}>スケジュール調整ツール</h4>
+          </Grid>
+          <Grid item>
+            Audjustoは出欠状況を入力することで<br />イベントの日程調整をできます。<br />
+          </Grid>
+          <Grid item>
+            <img src="/images/schedule.png" width={250} />
+          </Grid>
+        </Grid>
+      </Box>
+      <Box component="main" sx={{ p: 1, backgroundColor: 'lightblue' }}>
+        <Grid container justifyContent="center" alignItems="center" direction="column">
           <Grid item>
             <h4 style={style}>割り勘計算の自動化</h4>
           </Grid>
           <Grid item>
-            Audjustoは参加数で正確に割り勘を計算し、<br />瞬時に結果を提供します。<br />
+            Audjustoは参加者で正確に割り勘を計算し、<br />瞬時に結果を提供します。<br />
+          </Grid>
+          <Grid item>
+            <img src="/images/transaction.png" width={250} />
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box component="main" sx={{ p: 1 }}>
+        <Grid container justifyContent="center" alignItems="center" direction="column">
+          <Grid item>
+            <h3 style={style}>Audjustoの特徴</h3>
+          </Grid>
+          <Grid item>
+            <h4 style={style}>日程調整から割り勘計算まで</h4>
+          </Grid>
+          <Grid item>
+            イベントの日程調整から割り勘計算まで<br />シームレスに行います。<br />
+            もちろん日程調整、割り勘計算の別々での<br />利用も可能です。
           </Grid>
           <Grid item>
             <h4 style={style}>簡単なインターフェース</h4>
           </Grid>
           <Grid item>
             会員登録不要で利用できます。<br />
-            Audjustoのシンプルなインターフェースでは<br />
+            シンプルなインターフェースで<br />
             手間のかかる操作が一切不要です。<br />
           </Grid>
         </Grid>
-        {/* <MoveCreateGroupPageButton /> */}
       </Box>
     </>
   )
 }
 
 export default Home;
-
-
-

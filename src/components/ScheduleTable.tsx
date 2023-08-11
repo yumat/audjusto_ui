@@ -136,6 +136,7 @@ export default function ScheduleTable(prop: any) {
                         key={index}
                         label={item.name}
                         color="primary"
+                        size='small'
                         style={{ marginRight: '4px' }}
                         icon={<EditIcon />}
                         component={Link}
@@ -156,6 +157,7 @@ export default function ScheduleTable(prop: any) {
                         key={index}
                         label={item.name}
                         color="default"
+                        size='small'
                         style={{ marginRight: '4px' }}
                         icon={<EditIcon />}
                         component={Link}
@@ -177,6 +179,7 @@ export default function ScheduleTable(prop: any) {
                         key={index}
                         label={item.name}
                         color="error"
+                        size='small'
                         style={{ marginRight: '4px' }}
                         icon={<EditIcon />}
                         component={Link}

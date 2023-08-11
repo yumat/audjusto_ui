@@ -6,6 +6,10 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
+import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
+
 import useSwr from '../components/ApiGetSWR';
 import requests from '../utils/Requests';
 import Post from '../components/ApiPostLink'
@@ -107,7 +111,7 @@ const ModifyAttendantForm: React.FC = () => {
                                             color={selectedDates.some((selectedDate) => selectedDate.date === date.date && selectedDate.result === 'available') ? 'primary' : 'default'}
                                             onClick={() => handleDateSelection(date.date, date.date_id, 'available')}
                                         >
-                                            <CheckBoxIcon />
+                                            <SentimentVerySatisfiedIcon />
                                         </IconButton>
                                     </TableCell>
                                     <TableCell align="left">
@@ -115,7 +119,7 @@ const ModifyAttendantForm: React.FC = () => {
                                             color={selectedDates.some((selectedDate) => selectedDate.date === date.date && selectedDate.result === 'maybe') ? 'primary' : 'default'}
                                             onClick={() => handleDateSelection(date.date, date.date_id, 'maybe')}
                                         >
-                                            <IndeterminateCheckBoxIcon />
+                                            <SentimentDissatisfiedIcon />
                                         </IconButton>
                                     </TableCell>
                                     <TableCell align="left">
@@ -123,7 +127,7 @@ const ModifyAttendantForm: React.FC = () => {
                                             color={selectedDates.some((selectedDate) => selectedDate.date === date.date && selectedDate.result === 'unavailable') ? 'primary' : 'default'}
                                             onClick={() => handleDateSelection(date.date, date.date_id, 'unavailable')}
                                         >
-                                            <CheckBoxOutlineBlankIcon />
+                                            <SentimentVeryDissatisfiedIcon />
                                         </IconButton>
                                     </TableCell>
                                 </TableRow>

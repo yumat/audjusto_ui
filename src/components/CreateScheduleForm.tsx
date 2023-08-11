@@ -39,9 +39,6 @@ const CreateScheduleForm: React.FC = () => {
         return `${year}${month}${day}`;
     };
 
-    // const handleDateChange = (date: Date) => {
-    //     setSelectedDates(prevDates => [...prevDates, date]);
-    // };
 
     const handleDateChange = (date: Date) => {
         if (!selectedDates.some(selectedDate => selectedDate.getTime() === date.getTime())) {

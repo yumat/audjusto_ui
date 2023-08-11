@@ -2,6 +2,7 @@ const requests = {
     healthCheck:  import.meta.env.VITE_API_URL + '/health_check',  // GETメソッド
     fetchGroupData:  import.meta.env.VITE_API_URL + '/group',  // GET Groupメソッド
     InsertGroupData: import.meta.env.VITE_API_URL + '/group',  // POST Groupメソッド
+    InsertGroupNameData: import.meta.env.VITE_API_URL + '/groupname',  // POST GroupNameメソッド
     fetchMemberData:  import.meta.env.VITE_API_URL + '/member',  // GET Memberメソッド
     fetchMembersData:  import.meta.env.VITE_API_URL + '/members',  // GET Membersメソッド
     fetchPayData:  import.meta.env.VITE_API_URL + '/pay',  // GET Paysメソッド

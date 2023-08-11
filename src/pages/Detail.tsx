@@ -13,6 +13,7 @@ import Paper from '@mui/material/Paper';
 
 
 import ButtonAppBar from "../components/ButtonAppBar";
+import MoveBackPageButton from '../components/MoveBackPageButton';
 import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
 
@@ -75,15 +76,7 @@ const Detail: React.FC = () => {
               </Table>
             </TableContainer>
           </Paper>
-          <Button
-            sx={{ width: '100%', marginTop: 1 }}
-            variant="outlined"
-            color="inherit"
-            component={Link}
-            to={groupUrl}
-          >
-            戻る
-          </Button>
+          <MoveBackPageButton />
         </Grid>
       </Box>
     </>

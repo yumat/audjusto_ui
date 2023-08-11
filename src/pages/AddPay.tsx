@@ -1,6 +1,5 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { Button, Grid } from "@mui/material";
 import Toolbar from '@mui/material/Toolbar';
 import { useParams, Link } from "react-router-dom";
 // import Typography from '@mui/material/Typography';
@@ -8,6 +7,7 @@ import { useParams, Link } from "react-router-dom";
 import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
 import ButtonAppBar from "../components/ButtonAppBar";
+import MoveBackPageButton from '../components/MoveBackPageButton';
 import AddPayForm from "../components/AddPayForm";
 
 
@@ -40,15 +40,7 @@ const AddPay: React.FC = () => {
         <h2>立て替え記録の追加</h2>
         {/* <Grid container justifyContent="center" alignItems="center" style={{ flexWrap: 'wrap' }}> */}
           <AddPayForm membersData={membersData} />
-          <Button
-            sx={{ width: '100%', marginTop: 1 }}
-            variant="outlined"
-            color="inherit"
-            component={Link}
-            to={groupUrl}
-          >
-            戻る
-          </Button>
+          <MoveBackPageButton />
         {/* </Grid> */}
       </Box>
     </>

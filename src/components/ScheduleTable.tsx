@@ -60,7 +60,7 @@ export default function ScheduleTable(prop: any) {
   const maxAvailableLength = Math.max(...availableLengths);
 
   return (
-    <Paper sx={{ width: '90%' }}>
+    <Paper sx={{ width: '100%' }}>
       <TableContainer component={Paper}>
         <Table sx={{ width: '100%' }} size="small" aria-label="simple table">
           <TableHead>

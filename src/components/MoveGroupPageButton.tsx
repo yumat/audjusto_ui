@@ -7,7 +7,7 @@ export default function MoveGroupPageButton() {
   const groupUrl = "/group/" + id
   return (
     <Button
-      sx={{ width: "90%", marginTop: 1 }}
+      sx={{ width: "100%", marginTop: 1 }}
       variant="contained"
       color="primary"
       component={Link}

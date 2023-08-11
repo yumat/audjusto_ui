@@ -2,14 +2,13 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 import { Grid } from '@mui/material'
 import Toolbar from '@mui/material/Toolbar';
-// import Box from '@mui/material/Box';
+import Box from '@mui/material/Box';
 
 import ButtonAppBar from "../components/ButtonAppBar";
 import CopyButton from '../components/CopyButton';
 import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
-import OpenReimbursementDialogButton from '../components/OpenReimbursementDialogButton'
-import OpenDetailDialogButton from '../components/OpenDetailDialogButton'
+import MoveEditGroupNamePageButton from '../components/MoveEditGroupNamePageButton';
 import MoveAddPayPageButton from '../components/MoveAddPayPageButton'
 import MoveDetailGroupPageButton from '../components/MoveDetailGroupPageButton'
 import HistoryTable from '../components/HistoryTable'
@@ -46,31 +45,31 @@ const Group: React.FC = () => {
   return (
     <>
       <ButtonAppBar />
-      {/* <Box component="main" sx={{ p: 3 }}> */}
-      <Toolbar />
+      <Box component="main" sx={{ p: 3 }}>
+        <Toolbar />
 
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-        <h2 style={style}>{data.group_name}</h2>
-      </Grid>
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-        <CopyButton textToCopy={currentURL} />
-        <MoveAddPayPageButton id={id} />
-      </Grid>
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-        <h2>清算方法</h2><MoveDetailGroupPageButton id={id} />
-      </Grid>
-      <Grid container justifyContent="center" alignItems="flex-start">
-        <PaybackTable id={id} />
-      </Grid>
-      
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-        <h2>支払い履歴</h2> <MoveAddPayPageButton id={id} />
-      </Grid>
-      <Grid container justifyContent="center" alignItems="flex-start">
-        <HistoryTable id={id} />
-      </Grid>
-      
-      {/* </Box> */}
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap' }}>
+          <h2 style={style}>{data.group_name}</h2><MoveEditGroupNamePageButton id={id} />
+        </Grid>
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap' }}>
+          <CopyButton textToCopy={currentURL} />
+          <MoveAddPayPageButton id={id} />
+        </Grid>
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap' }}>
+          <h2>清算方法</h2><MoveDetailGroupPageButton id={id} />
+        </Grid>
+        <Grid container justifyContent="center" alignItems="flex-start">
+          <PaybackTable id={id} />
+        </Grid>
+
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap' }}>
+          <h2>支払い履歴</h2> <MoveAddPayPageButton id={id} />
+        </Grid>
+        <Grid container justifyContent="center" alignItems="flex-start">
+          <HistoryTable id={id} />
+        </Grid>
+
+      </Box>
     </>
   )
 }

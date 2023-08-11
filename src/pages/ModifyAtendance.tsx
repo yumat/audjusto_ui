@@ -1,10 +1,9 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { Button } from "@mui/material";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Toolbar from '@mui/material/Toolbar';
 
-
+import MoveBackPageButton from '../components/MoveBackPageButton';
 import ModifyAttendantForm from '../components/ModifyAttendanceForm';
 import DeleteAttendanceButton from '../components/DeleteAttendanceButton';
 import ButtonAppBar from "../components/ButtonAppBar";
@@ -21,15 +20,7 @@ const ModifyAttendance: React.FC = () => {
         <h2>出欠を修正する</h2>
         <ModifyAttendantForm />
         <DeleteAttendanceButton />
-        <Button
-          sx={{ width: '100%', marginTop: 1 }}
-          variant="outlined"
-          color="inherit"
-          component={Link}
-          to={scheduleUrl}
-        >
-          戻る
-        </Button>
+        <MoveBackPageButton />
 
       </Box>
     </>

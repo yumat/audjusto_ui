@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home';
 import New from './pages/New';
 import Group from './pages/Group';
+import EditGroupName from './pages/EditGroupName'
 import AddPay from './pages/AddPay';
 // import ModifyPay from './pages/ModifyPay';
 import Detail from './pages/Detail';
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/new_group" element={<New />} />
         <Route path="/group/:id" element={<Group />} />
+        <Route path="/edit_groupname/:id" element={<EditGroupName />} />
         <Route path="/add_pay/:id" element={<AddPay />} />
         {/* <Route path="/modify_pay/:id/:day" element={<ModifyPay />} /> */}
         <Route path="/group_detail/:id" element={<Detail />} />

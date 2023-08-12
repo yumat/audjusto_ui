@@ -2,18 +2,18 @@ import { useParams, Link } from "react-router-dom";
 import { Button, Grid } from "@mui/material";
 
 
-export default function MoveGroupPageButton() {
+export default function MoveAddSchedulePageButton() {
   const { id } = useParams();
-  const groupUrl = "/group/" + id
+  const addScheduleUrl = "/add_schedule/" + id
   return (
     <Button
       sx={{ width: "100%", marginTop: 1 }}
       variant="contained"
-      color="success"
+      color="primary"
       component={Link}
-      to={groupUrl}
+      to={addScheduleUrl}
     >
-      割り勘グループに移動する
+      候補日を追加する
     </Button>
   );
 }

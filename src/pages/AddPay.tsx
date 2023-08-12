@@ -15,7 +15,6 @@ import AddPayForm from "../components/AddPayForm";
 const AddPay: React.FC = () => {
 
   const { id } = useParams();
-  const groupUrl = "/group/" + id
   const { data: membersData, isLoading: isMembersDataLoading, isError: isMembersDataError } = useSwr(requests.fetchMembersData + "/" + id)
 
   if (isMembersDataLoading)

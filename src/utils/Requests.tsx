@@ -12,6 +12,7 @@ const requests = {
     fetchPaybackData:  import.meta.env.VITE_API_URL + '/paybacks',  // GET Paybacksメソッド
     fetchScheduleData: import.meta.env.VITE_API_URL + '/schedule',  // GET Scheduleメソッド
     InsertScheduleData: import.meta.env.VITE_API_URL + '/schedule',  // POST Scheduleメソッド
+    InsertAddScheduleData: import.meta.env.VITE_API_URL + '/add_schedule',  // POST add Scheduleメソッド
     fetchAttendanceData: import.meta.env.VITE_API_URL + '/attendance',  // GET Attendanceメソッド
     InsertAttendanceData: import.meta.env.VITE_API_URL + '/attendance',  // POST Attendanceメソッド
     DeleteAttendanceData: import.meta.env.VITE_API_URL + '/attendance',  // Delete Attendanceメソッド

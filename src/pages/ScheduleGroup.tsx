@@ -8,6 +8,7 @@ import ButtonAppBar from "../components/ButtonAppBar";
 import CopyButton from '../components/CopyButton';
 import MoveEditGroupNamePageButton from '../components/MoveEditGroupNamePageButton';
 import MoveAttendancePageButton from '../components/MoveAttendancePageButton';
+import MoveAddSchedulePageButton from '../components/MoveAddSchedulePageButton';
 import MoveGroupPageButton from '../components/MoveGroupPageButton';
 import ScheduleTable from '../components/ScheduleTable';
 import requests from '../utils/Requests';
@@ -62,6 +63,7 @@ const ScheduleGroup: React.FC = () => {
         <ScheduleTable id={id} />
       </Grid>
       <Grid container justifyContent="center" alignItems="flex-start">
+        <MoveAddSchedulePageButton />
         <MoveGroupPageButton />
       </Grid>
       </Box>

@@ -12,7 +12,6 @@ import MoveBackPageButton from '../components/MoveBackPageButton';
 
 const AddMember: React.FC = () => {
   const { id } = useParams();
-  const scheduleUrl = "/schedule/" + id
   return (
     <>
       <ButtonAppBar />

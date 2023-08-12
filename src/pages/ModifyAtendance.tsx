@@ -11,7 +11,6 @@ import ButtonAppBar from "../components/ButtonAppBar";
 
 const ModifyAttendance: React.FC = () => {
   const { id } = useParams();
-  const scheduleUrl = "/schedule/" + id
   return (
     <>
       <ButtonAppBar />

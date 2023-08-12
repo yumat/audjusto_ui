@@ -10,6 +10,7 @@ import Detail from './pages/Detail';
 import NewSchedule from './pages/NewSchedule';
 import ScheduleGroup from './pages/ScheduleGroup';
 import AddMember from './pages/AddMember';
+import AddSchedule from './pages/AddSchedule';
 import ModifyAttendance from './pages/ModifyAtendance';
 import HowToUse from "./pages/HowToUse"
 import NotFound from './pages/NotFound';
@@ -27,6 +28,7 @@ const App: React.FC = () => {
         <Route path="/group_detail/:id" element={<Detail />} />
         <Route path="/new_schedule" element={<NewSchedule />} />
         <Route path="/schedule/:id" element={<ScheduleGroup />} />
+        <Route path="/add_schedule/:id" element={<AddSchedule />} />
         <Route path="/add_member/:id" element={<AddMember />} />
         <Route path="/modify_attendance/:id/:member_id" element={<ModifyAttendance />} />
         <Route path="/how_to_use" element={<HowToUse />} />

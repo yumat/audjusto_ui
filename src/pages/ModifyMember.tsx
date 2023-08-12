@@ -3,29 +3,30 @@ import Box from '@mui/material/Box';
 import { useParams } from "react-router-dom";
 import Toolbar from '@mui/material/Toolbar';
 
-// import Typography from '@mui/material/Typography';
-
-import AddMemberForm from '../components/AddMemberForm';
-import ButtonAppBar from "../components/ButtonAppBar";
 import MoveBackPageButton from '../components/MoveBackPageButton';
+import ModifyAttendantForm from '../components/ModifyAttendanceForm';
+import DeleteAttendanceButton from '../components/DeleteAttendanceButton';
+import ButtonAppBar from "../components/ButtonAppBar";
 
 
-const AddMember: React.FC = () => {
+const ModifyMember: React.FC = () => {
   const { id } = useParams();
   return (
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <h2>メンバーを追加する</h2>
-        <AddMemberForm />
+        <h2>名前を修正する</h2>
+        <ModifyAttendantForm team="money"/>
+        <DeleteAttendanceButton />
         <MoveBackPageButton />
+
       </Box>
     </>
   )
 }
 
-export default AddMember;
+export default ModifyMember;
 
 
 

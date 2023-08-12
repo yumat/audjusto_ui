@@ -16,8 +16,8 @@ const ModifyAttendance: React.FC = () => {
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <h2>出欠を修正する</h2>
-        <ModifyAttendantForm />
+        <h2>修正する</h2>
+        <ModifyAttendantForm team="schedule"/>
         <DeleteAttendanceButton />
         <MoveBackPageButton />
 

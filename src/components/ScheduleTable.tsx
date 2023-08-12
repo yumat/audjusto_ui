@@ -26,6 +26,12 @@ import { Padding } from '@mui/icons-material';
 
 
 export default function ScheduleTable(prop: any) {
+  const style = {
+    // backgroundColor: "gray",
+    // color: "#FFF",
+    margin: 0,
+    padding: 3,
+  };
   const { data, isLoading, isError } = useSwr(requests.fetchScheduleData + "/" + prop.id)
   const formatDate = (dateString: string) => {
     const year = parseInt(dateString.slice(0, 4));
@@ -50,8 +56,6 @@ export default function ScheduleTable(prop: any) {
   const handleClose = () => {
     setOpen(false);
   };
-
-
 
   if (isLoading) return <div>Loading</div>
   if (isError) return <div>Error</div>
@@ -123,6 +127,7 @@ export default function ScheduleTable(prop: any) {
             {selectedRowData && (
               <div>
                 <h3>{formatDate(selectedRowData.date)}の参加者詳細</h3>
+                <h6 style={style}>名前をクリックすると出欠を修正できます。</h6>
                 <Grid container justifyContent="left" alignItems="flex-start">
                   <BottomNavigation showLabels >
                     <BottomNavigationAction

@@ -1,15 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import { Button, Typography } from "@mui/material";
 
-import Delete from './ApiDelete'
+import Delete from './ApiDeleteBase'
 import useSwr from '../components/ApiGetSWR'
 import requests from '../utils/Requests';
 
 
 export default function DeleteAttendanceButton() {
   const { id, member_id } = useParams();
+  const navigate = useNavigate();
   const {
     data: memberData,
     isLoading: isMemberDataLoading,
@@ -17,7 +18,9 @@ export default function DeleteAttendanceButton() {
   } = useSwr(requests.fetchMemberData + "/" + id + "/" + member_id)
 
   const DeleteApi = (body: any) => {
-    return Delete(requests.DeleteAttendanceData + '/' + id, body, id, "/schedule/")
+    Delete(requests.DeleteAttendanceData + '/' + id, body)
+    navigate(-1)
+    return 
   };
 
   if (isMemberDataLoading)

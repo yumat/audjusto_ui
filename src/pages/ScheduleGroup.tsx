@@ -11,6 +11,7 @@ import MoveAttendancePageButton from '../components/MoveAttendancePageButton';
 import MoveAddSchedulePageButton from '../components/MoveAddSchedulePageButton';
 import MoveGroupPageButton from '../components/MoveGroupPageButton';
 import ScheduleTable from '../components/ScheduleTable';
+import MembersChip from '../components/MembersChip';
 import requests from '../utils/Requests';
 import useSwr from '../components/ApiGetSWR'
 
@@ -47,25 +48,28 @@ const ScheduleGroup: React.FC = () => {
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }} alignItems="flex-start">
-      <Toolbar />
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-        <h2 style={style}>{data.group_name}</h2><MoveEditGroupNamePageButton id={id}/>
-      </Grid>
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-        <CopyButton textToCopy={currentURL} />
-      </Grid>
-      <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-        <h2>候補日</h2>
-        <MoveAttendancePageButton id={id} />
-      </Grid>
-      <Grid container justifyContent="center" alignItems="flex-start">
-        <h6 style={{ textAlign: 'right', width: '100%', margin: 0 }}>行をクリックすると出欠の詳細を確認できます。</h6>
-        <ScheduleTable id={id} />
-      </Grid>
-      <Grid container justifyContent="center" alignItems="flex-start">
-        <MoveAddSchedulePageButton />
-        <MoveGroupPageButton />
-      </Grid>
+        <Toolbar />
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
+          <h2 style={style}>{data.group_name}の日程調整</h2><MoveEditGroupNamePageButton id={id} />
+        </Grid>
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
+          <CopyButton textToCopy={currentURL} />
+        </Grid>
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
+          <h2 style={style}>候補日</h2>
+          <MoveAttendancePageButton id={id} />
+        </Grid>
+        <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
+          <MembersChip functionTeam="schedule"/>
+        </Grid>
+        <Grid container justifyContent="center" alignItems="flex-start">
+          <h6 style={{ textAlign: 'right', width: '100%', margin: 0 }}>行をクリックすると出欠の詳細を確認できます。</h6>
+          <ScheduleTable id={id} />
+        </Grid>
+        <Grid container justifyContent="center" alignItems="flex-start">
+          <MoveAddSchedulePageButton />
+          <MoveGroupPageButton />
+        </Grid>
       </Box>
     </>
   )

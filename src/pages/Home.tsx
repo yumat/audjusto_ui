@@ -44,10 +44,10 @@ const Home: React.FC = () => {
           </Grid>
         </Grid>
       </Box>
-      <Box component="main" sx={{ p: 1, backgroundColor: 'lightgreen' }}>
+      <Box component="main" sx={{ p: 1, backgroundColor: 'lightgreen', border: '5px solid white', borderRadius: '20px' }}>
         <Grid container justifyContent="center" alignItems="center" direction="column">
           <Grid item>
-            <h4 style={style}>スケジュール調整ツール</h4>
+            <h3 style={style}>スケジュール調整ツール</h3>
           </Grid>
           <Grid item>
             Audjustoは出欠状況を入力することで<br />イベントの日程調整をできます。<br />
@@ -57,10 +57,10 @@ const Home: React.FC = () => {
           </Grid>
         </Grid>
       </Box>
-      <Box component="main" sx={{ p: 1, backgroundColor: 'lightblue' }}>
+      <Box component="main" sx={{ p: 1, backgroundColor: 'lightblue', border: '5px solid white', borderRadius: '20px' }}>
         <Grid container justifyContent="center" alignItems="center" direction="column">
           <Grid item>
-            <h4 style={style}>割り勘計算の自動化</h4>
+            <h3 style={style}>割り勘計算の自動化</h3>
           </Grid>
           <Grid item>
             Audjustoは参加者で正確に割り勘を計算し、<br />瞬時に結果を提供します。<br />
@@ -77,7 +77,7 @@ const Home: React.FC = () => {
             <h3 style={style}>Audjustoの特徴</h3>
           </Grid>
           <Grid item>
-            <h4 style={style}>日程調整から割り勘計算まで</h4>
+            <h3 style={style}>日程調整から割り勘計算まで</h3>
           </Grid>
           <Grid item>
             イベントの日程調整から割り勘計算まで<br />シームレスに行います。<br />

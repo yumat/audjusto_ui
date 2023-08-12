@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, IconButton } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
@@ -9,10 +9,15 @@ import useSwr from '../components/ApiGetSWR';
 import requests from '../utils/Requests';
 import Post from '../components/ApiPostLink'
 
-const ModifyAttendantForm: React.FC = () => {
+interface FuncTeamProps {
+    team: string;
+  }
+
+const ModifyAttendantForm: React.FC<FuncTeamProps> = ({ team }) => {
     const { id, member_id } = useParams();
     const { data, isLoading, isError } = useSwr(requests.fetchScheduleData + '/' + id);
     const { data: scheduleData, isLoading: isScheduleDataLoading, isError: isScheduleDataError } = useSwr(requests.fetchAttendanceData + '/' + id + '/' + member_id);
+    const afterURL: string = team === 'money' ? '/group/' : '/schedule/';
 
     const formatDate = (dateString: string) => {
         const year = parseInt(dateString.slice(0, 4));
@@ -53,11 +58,11 @@ const ModifyAttendantForm: React.FC = () => {
     };
 
     const postApi = (data: any) => {
-        return Post(requests.InsertAttendanceData + "/" + id, data, "/schedule/", id)
+        return Post(requests.InsertAttendanceData + "/" + id, data, afterURL, id)
+
     };
 
     if (isLoading || isScheduleDataLoading) {
-    // if (isLoading) {
         return (
             <>
                 <div>Loading</div>
@@ -65,7 +70,6 @@ const ModifyAttendantForm: React.FC = () => {
         );
     }
     if (isError || isScheduleDataError) {
-    // if (isError) {
         return (
             <>
                 <div>Error</div>
@@ -84,6 +88,7 @@ const ModifyAttendantForm: React.FC = () => {
                 error={name.length < 1 || name.length > 16}
                 helperText={(name.length > 0 && name.length < 1) ? '名前は1文字以上で入力してください。' : (name.length > 16) ? '名前は16文字以下で入力してください。' : ''}
             />
+            {team === 'schedule' ? (
             <Paper sx={{ width: '100%' }}>
                 <TableContainer component={Paper}>
                     <Table sx={{ width: '100%' }} size="small" aria-label="simple table">
@@ -131,6 +136,9 @@ const ModifyAttendantForm: React.FC = () => {
                     </Table>
                 </TableContainer>
             </Paper>
+            ) : (
+                <div></div>
+            )}
             <Button
                 sx={{ width: '100%', marginTop: 1 }}
                 variant="contained"

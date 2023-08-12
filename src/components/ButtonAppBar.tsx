@@ -39,14 +39,15 @@ export default function DrawerAppBar(props: Props) {
         {/* <h5>FAQ</h5>
         <h5>要望・問い合わせ</h5>
         <h5>広告について</h5>
-        <h5>利用規約</h5>
         <h5>プライバシーポリシー</h5>
         <h5>運営元</h5>
         <h5>コピーライト</h5> */}
       </Typography>
       <Divider />
-      <Link to="/how_to_use" style={{color: "black"}}>使い方</Link>
-      {/* <h6>2023 Audjusto</h6> */}
+      <Link to="/how_to_use" style={{color: "black"}}>使い方</Link><br />
+      <Link to="/privacy_policy" style={{color: "black"}}>プライバシーポリシー</Link><br />
+      <Link to="/terms_of_use" style={{color: "black"}}>利用規約</Link><br />
+      <h6>©2023 Audjusto</h6>
 
     </Box>
   );

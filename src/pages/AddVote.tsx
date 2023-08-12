@@ -5,27 +5,28 @@ import Toolbar from '@mui/material/Toolbar';
 
 // import Typography from '@mui/material/Typography';
 
-import AddMemberForm from '../components/AddMemberForm';
+import AddAttendanceForm from '../components/AddAttendanceForm';
 import ButtonAppBar from "../components/ButtonAppBar";
 import MoveBackPageButton from '../components/MoveBackPageButton';
 
 
-const AddMember: React.FC = () => {
+const AddVote: React.FC = () => {
   const { id } = useParams();
   return (
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <h2>メンバーを追加する</h2>
-        <AddMemberForm />
+        <h2>出欠を登録する</h2>
+        <AddAttendanceForm />
         <MoveBackPageButton />
+
       </Box>
     </>
   )
 }
 
-export default AddMember;
+export default AddVote;
 
 
 

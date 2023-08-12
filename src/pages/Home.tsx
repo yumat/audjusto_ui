@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import { Grid } from '@mui/material'
 
 import usePageTracking from "../components/usePageTracking"
-import Seo from '../utils/Seo';
 
 import ButtonAppBar from "../components/ButtonAppBar";
 import MoveCreateGroupPageButton from "../components/MoveCreateGroupPageButton";
@@ -41,7 +40,7 @@ const Home: React.FC = () => {
             <h3 style={style}>Audjustoの2大機能</h3>
           </Grid>
           <Grid item>
-            <h6 style={style}>以下2機能を単体での利用はもちろん連携した利用も可能です。</h6>
+            <h6 style={style}>以下2機能を単体での利用はもちろん、連携した利用も可能です。</h6>
           </Grid>
         </Grid>
       </Box>

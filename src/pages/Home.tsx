@@ -72,25 +72,17 @@ const Home: React.FC = () => {
         </Grid>
       </Box>
 
-      <Box component="main" sx={{ p: 1 }}>
+      <Box component="main" sx={{ p: 1, backgroundColor: 'navajowhite', border: '5px solid white', borderRadius: '20px' }}>
         <Grid container justifyContent="center" alignItems="center" direction="column">
           <Grid item>
             <h3 style={style}>Audjustoの特徴</h3>
           </Grid>
-          <Grid item>
-            <h3 style={style}>日程調整から割り勘計算まで</h3>
-          </Grid>
-          <Grid item>
-            イベントの日程調整から割り勘計算まで<br />シームレスに行います。<br />
-            もちろん日程調整、割り勘計算の別々での<br />利用も可能です。
-          </Grid>
-          <Grid item>
-            <h4 style={style}>簡単なインターフェース</h4>
-          </Grid>
-          <Grid item>
-            会員登録不要で利用できます。<br />
-            シンプルなインターフェースで<br />
-            手間のかかる操作が一切不要です。<br />
+          <Grid item >
+            <p font-size="small">
+              ①日程調整、割り勘計算の<br />　単体での利用も連携した利用も可能。<br />
+              ②会員登録不要<br />
+              ③シンプルなインターフェースで<br />　手間のかかる操作が不要です。<br />
+            </p>
           </Grid>
         </Grid>
       </Box>
@@ -99,13 +91,3 @@ const Home: React.FC = () => {
 }
 
 export default Home;
-
-export function Head() {
-  return (
-    <Seo
-          title="audjusto(オージャスト) 日程調整と割り勘計算を簡単に共有"
-          url="https://audjusto.com"
-          description="Audjustoはグループイベントでの日程調整または割り勘計算の結果共有を簡単に提供するサービスです。単体での利用はもちろん、日程調整からいうベントの割り勘共有までシームレスに行えます。登録不要で誰でも簡単に利用できます。"
-      />
-  )
-}

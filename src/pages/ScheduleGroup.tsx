@@ -19,10 +19,7 @@ import useSwr from '../components/ApiGetSWR'
 
 const ScheduleGroup: React.FC = () => {
   let style = {
-    // backgroundColor: "gray",
-    // color: "#FFF",
-    margin: 0,
-    padding: 3,
+    fontSize: 24
   };
   const { id } = useParams();
   const currentURL = window.location.href;
@@ -50,20 +47,20 @@ const ScheduleGroup: React.FC = () => {
       <Box component="main" sx={{ p: 3 }} alignItems="flex-start">
         <Toolbar />
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-          <h2 style={style}>{data.group_name}の日程調整</h2><MoveEditGroupNamePageButton id={id} />
+          <h1 style={style}>{data.group_name}の日程調整</h1><MoveEditGroupNamePageButton id={id} />
         </Grid>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
           <CopyButton textToCopy={currentURL} />
         </Grid>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
-          <h2 style={style}>候補日</h2>
+          <h1 style={style}>候補日</h1>
           <MoveAttendancePageButton id={id} />
         </Grid>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
           <MembersChip functionTeam="schedule"/>
         </Grid>
         <Grid container justifyContent="center" alignItems="flex-start">
-          <h6 style={{ textAlign: 'right', width: '100%', margin: 0 }}>行をクリックすると出欠の詳細を確認できます。</h6>
+          <p style={{ textAlign: 'right', width: '100%', margin: 0, fontSize: 10 }}><b>行をクリックすると出欠の詳細を確認できます。</b></p>
           <ScheduleTable id={id} />
         </Grid>
         <Grid container justifyContent="center" alignItems="flex-start">

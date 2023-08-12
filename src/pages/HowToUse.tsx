@@ -10,12 +10,7 @@ import ButtonAppBar from "../components/ButtonAppBar";
 
 
 const HowToUse: React.FC = () => {
-  let style = {
-    // backgroundColor: "gray",
-    // color: "#FFF",
-    margin: 0,
-    padding: 3,
-};
+
   return (
     <>
       <ButtonAppBar />

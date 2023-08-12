@@ -10,13 +10,16 @@ import ButtonAppBar from "../components/ButtonAppBar";
 
 
 const ModifyAttendance: React.FC = () => {
+  let styleonlysize = {
+    fontSize: 24
+  };
   const { id } = useParams();
   return (
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <h2>修正する</h2>
+        <h1 style={styleonlysize}>修正する</h1>
         <ModifyAttendantForm team="schedule"/>
         <DeleteAttendanceButton />
         <MoveBackPageButton />

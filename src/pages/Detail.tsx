@@ -24,6 +24,7 @@ const Detail: React.FC = () => {
     // color: "#FFF",
     margin: 0,
     padding: 3,
+    fontSize: 24
   };
   const { id } = useParams();
 
@@ -47,7 +48,7 @@ const Detail: React.FC = () => {
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }} alignItems="flex-start">
       <Toolbar />
-      <h2 style={style}>明細詳細</h2>
+      <h1 style={style}>明細詳細</h1>
         <Grid container justifyContent="center" alignItems="flex-start">
           <Paper sx={{ width: '100%' }}>
             <TableContainer component={Paper}>

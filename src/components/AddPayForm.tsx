@@ -18,6 +18,10 @@ type FormInput = {
 };
 
 export default function AddPayForm(prop: any) {
+    let stylep = {
+        fontSize: 15
+      };
+
     const { id } = useParams();
     const { register, handleSubmit, getValues, setValue } = useForm<FormInput>();
 
@@ -59,7 +63,7 @@ export default function AddPayForm(prop: any) {
                 </Select>
             </FormControl>
 
-            <h4>誰に</h4>
+            <b style={stylep}>誰に</b>
             <FormControl fullWidth>
                 <FormGroup
                     style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}

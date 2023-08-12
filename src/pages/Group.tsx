@@ -20,11 +20,13 @@ import PaybackTable from '../components/PaybackTable'
 
 
 const Group: React.FC = () => {
+  let styleonlysize = {
+    fontSize: 24
+  };
   let style = {
-    // backgroundColor: "gray",
-    // color: "#FFF",
     margin: 0,
     padding: 3,
+    fontSize: 24
   };
   const { id } = useParams();
   const currentURL = window.location.href;
@@ -53,7 +55,7 @@ const Group: React.FC = () => {
         <Toolbar />
 
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap' }}>
-          <h2 style={style}>{data.group_name}の割り勘グループ</h2><MoveEditGroupNamePageButton id={id} />
+          <h1 style={style}>{data.group_name}の割り勘グループ</h1><MoveEditGroupNamePageButton id={id} />
         </Grid>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap' }}>
           <CopyButton textToCopy={currentURL} />
@@ -63,14 +65,14 @@ const Group: React.FC = () => {
           <MembersChip functionTeam="money"/>
         </Grid>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap' }}>
-          <h2>清算方法</h2><MoveDetailGroupPageButton id={id} />
+          <h1 style={styleonlysize}>清算方法</h1><MoveDetailGroupPageButton id={id} />
         </Grid>
         <Grid container justifyContent="center" alignItems="flex-start">
           <PaybackTable id={id} />
         </Grid>
 
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap' }}>
-          <h2>支払い履歴</h2> <MoveAddPayPageButton id={id} />
+          <h1 style={styleonlysize}>支払い履歴</h1> <MoveAddPayPageButton id={id} />
         </Grid>
         <Grid container justifyContent="center" alignItems="flex-start">
           <HistoryTable id={id} />

@@ -16,6 +16,7 @@ const EditGroupName: React.FC = () => {
     // color: "#FFF",
     margin: 0,
     padding: 3,
+    fontSize: 24
   };
   return (
     <>
@@ -23,7 +24,7 @@ const EditGroupName: React.FC = () => {
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Grid container justifyContent="left" alignItems="left" direction="column">
-          <h2 style={style}>グループ名の編集</h2>
+          <h1 style={style}>グループ名の編集</h1>
           <ModifyGroupNameForm />
           <MoveBackPageButton />
         </Grid>

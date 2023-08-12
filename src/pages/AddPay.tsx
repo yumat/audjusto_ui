@@ -13,7 +13,9 @@ import AddPayForm from "../components/AddPayForm";
 
 
 const AddPay: React.FC = () => {
-
+  let styleh1 = {
+    fontSize: 24
+  };
   const { id } = useParams();
   const { data: membersData, isLoading: isMembersDataLoading, isError: isMembersDataError } = useSwr(requests.fetchMembersData + "/" + id)
 
@@ -36,11 +38,9 @@ const AddPay: React.FC = () => {
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <h2>立て替え記録の追加</h2>
-        {/* <Grid container justifyContent="center" alignItems="center" style={{ flexWrap: 'wrap' }}> */}
+        <h1 style={styleh1}>立て替え記録の追加</h1>
           <AddPayForm membersData={membersData} />
           <MoveBackPageButton />
-        {/* </Grid> */}
       </Box>
     </>
   )

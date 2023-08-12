@@ -1,6 +1,5 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { useParams } from "react-router-dom";
 import Toolbar from '@mui/material/Toolbar';
 
 import MoveBackPageButton from '../components/MoveBackPageButton';
@@ -10,13 +9,15 @@ import ButtonAppBar from "../components/ButtonAppBar";
 
 
 const ModifyMember: React.FC = () => {
-  const { id } = useParams();
+  let styleonlysize = {
+    fontSize: 24
+  };
   return (
     <>
       <ButtonAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <h2>名前を修正する</h2>
+          <h1 style={styleonlysize}>名前を修正する</h1>
         <ModifyAttendantForm team="money"/>
         <DeleteAttendanceButton />
         <MoveBackPageButton />

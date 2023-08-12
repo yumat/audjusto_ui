@@ -1,10 +1,7 @@
-.react-calendar__navigation__label{
+.react-calendar__navigation__label__labelText {
     color: black;
 }
 .react-calendar__navigation__arrow{
-    color: black;
-}
-.react-calendar__navigation__prev2-button{
     color: black;
 }
 .react-calendar__month-view__days__day{

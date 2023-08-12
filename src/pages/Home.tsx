@@ -4,6 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import { Grid } from '@mui/material'
 
 import usePageTracking from "../components/usePageTracking"
+import Seo from '../utils/Seo';
 
 import ButtonAppBar from "../components/ButtonAppBar";
 import MoveCreateGroupPageButton from "../components/MoveCreateGroupPageButton";
@@ -25,7 +26,7 @@ const Home: React.FC = () => {
         <Toolbar />
         <Grid container justifyContent="center" alignItems="center" direction="column">
           <Grid item>
-            <h3 style={style}>日程調整と割り勘計算結果の共有</h3>
+            <h3 style={style}>日程調整と割り勘結果の共有</h3>
           </Grid>
           <Grid item>
             <img src="/images/title.png" width={350} />
@@ -98,3 +99,13 @@ const Home: React.FC = () => {
 }
 
 export default Home;
+
+export function Head() {
+  return (
+    <Seo
+          title="audjusto(オージャスト) 日程調整と割り勘計算を簡単に共有"
+          url="https://audjusto.com"
+          description="Audjustoはグループイベントでの日程調整または割り勘計算の結果共有を簡単に提供するサービスです。単体での利用はもちろん、日程調整からいうベントの割り勘共有までシームレスに行えます。登録不要で誰でも簡単に利用できます。"
+      />
+  )
+}

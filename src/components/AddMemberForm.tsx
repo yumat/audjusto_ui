@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, IconButton } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
-import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
-import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
-import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
-
 import useSwr from '../components/ApiGetSWR';
 import requests from '../utils/Requests';
 import Post from '../components/ApiPostLink'

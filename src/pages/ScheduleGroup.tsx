@@ -51,10 +51,10 @@ const ScheduleGroup: React.FC = () => {
         </Grid>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
           <CopyButton textToCopy={currentURL} />
+          <MoveAttendancePageButton id={id} />
         </Grid>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
           <h1 style={style}>候補日</h1>
-          <MoveAttendancePageButton id={id} />
         </Grid>
         <Grid container justifyContent="left" alignItems="center" style={{ flexWrap: 'wrap', marginLeft: '10px' }}>
           <MembersChip functionTeam="schedule"/>

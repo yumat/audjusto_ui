@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Grid } from '@mui/material'
 
-import usePageTracking from "../components/usePageTracking"
+// import usePageTracking from "../components/usePageTracking"
 
 import ButtonAppBar from "../components/ButtonAppBar";
 import MoveCreateGroupPageButton from "../components/MoveCreateGroupPageButton";
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
     margin: 0,
     padding: 0,
   };
-  usePageTracking();
+  // usePageTracking();
   return (
     <>
       <ButtonAppBar />

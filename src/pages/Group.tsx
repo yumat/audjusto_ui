@@ -21,7 +21,8 @@ import PaybackTable from '../components/PaybackTable'
 
 const Group: React.FC = () => {
   let styleonlysize = {
-    fontSize: 24
+    fontSize: 24,
+    width: '40%'
   };
   let style = {
     margin: 0,

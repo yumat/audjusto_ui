@@ -10,6 +10,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
+import usePageTracking from "../components/usePageTracking"
+
 interface Props {
   window?: () => Window;
 }
@@ -17,12 +19,15 @@ interface Props {
 const drawerWidth = 240;
 
 export default function DrawerAppBar(props: Props) {
-  let style = {
-    // backgroundColor: "gray",
-    // color: "#FFF",
-    margin: 0,
-    padding: 3,
-  };
+
+  usePageTracking();
+  // let style = {
+  //   // backgroundColor: "gray",
+  //   // color: "#FFF",
+  //   margin: 0,
+  //   padding: 3,
+  // };
+  
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 

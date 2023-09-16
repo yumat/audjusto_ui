@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
-import Chip from '@mui/material/Chip';
+import { Button } from "@mui/material";
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 
 
 export default function MoveDetailGroupPageButton(prop: any) {
   const addPayUrl = "/add_pay/" + prop.id
   return (
-    <Chip
-      icon={<PlaylistAddIcon />}
-      sx={{ minWidth: '30%', margin: 1 }}
-      label="立て替え記録の追加"
+    <Button
+      sx={{ width: '55%', margin: 1 }}
+      variant="outlined"
+      color="primary"
       component={Link}
       to={addPayUrl}
-    />
+      startIcon={<PlaylistAddIcon />}
+    >
+      立て替え記録の追加
+    </Button>
   );
 }
